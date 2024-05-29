@@ -1,0 +1,504 @@
+:root {
+    font-size: 16px;
+    --text-primary: #b6b6b6;
+    --text-secondary: #ececec;
+    --bg-primary: #23232e;
+    --bg-secondary: #141418;
+}
+
+body {
+    color: black;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #6649b8;
+}
+
+main {
+    margin-left: 5rem;
+    padding: 1rem;
+    text-align: center;
+    height: auto;
+    min-height: 100vh; 
+    background: #323234;
+    color: var(--text-primary);
+}
+
+iframe {
+    width: 90%;
+    height: 100vh;
+    border: none;
+}
+
+.navbar {
+    width: 5rem;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--bg-primary);
+    transition: width 200ms ease;
+}
+
+.navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+nav::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+nav::-webkit-scrollbar-track {
+    background: #1e1e24;
+}
+
+nav::-webkit-scrollbar-thumb {
+    background: #6649b8;
+}
+
+.nav-item {
+    width: 100%;
+    cursor: pointer;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.7);
+    transition: var(--transition-speed);
+}
+
+.nav-link:hover {
+    filter: grayscale(0%) opacity(1);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+}
+
+.link-text {
+    display: none;
+    margin-left: 1rem;
+}
+
+.nav-link i {
+    min-width: 2rem;
+    margin: 0 1.5rem;
+}
+
+.nav-link input[type="text"] {
+    font-family: inherit;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    color: #fff;
+    background: transparent;
+    transition: border-color 0.2s;
+    &::placeholder {
+        color: transparent;
+    }
+    &:placeholder-shown ~ .form__label {
+        cursor: text;
+        top: 20px;
+    }
+    min-width: 2rem;
+    margin: 0 1.5rem;
+    display: none;
+}
+
+.nav-link input[type="color"] {
+    border-radius: 50%;
+    inline-size: 30px;
+    block-size: 30px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(153, 153, 153);
+    min-width: 2rem;
+    margin: 0 3rem;
+    display: none;
+}
+
+input[type="color"]::-webkit-color-swatch{
+    border-radius: 50%;
+}
+
+input[type="color" i]::-webkit-color-swatch-wrapper {
+    padding: 1px;
+}
+
+input[type="checkbox"] {
+    width: 1.5rem;
+    height: 1.5rem;
+    accent-color: var(--bg-secondary);
+    border: 2px solid var(--bg-secondary);
+    border-radius: 0.25rem;
+    appearance: none;
+    cursor: pointer;
+    min-width: 2rem;
+    margin: 0 2rem;
+    display: none;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--bg-secondary);
+    border-color: var(--text-secondary);
+    color: var(--text-secondary);
+}
+
+input[type="checkbox"]:hover {
+    border-color: var(--text-secondary);
+}
+
+input[type="checkbox"]::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--text-primary);
+    border-radius: 0.25rem;
+}
+
+input[type="checkbox"]:checked::before {
+    content: '\2713'; /* Unicode for checkmark */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+input[type="button"], 
+input[type="submit"], 
+input[type="reset"] {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--bg-secondary);
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    min-width: 2rem;
+    margin: 0 3.5rem;
+    display: none;
+}
+
+input[type="button"]:hover, 
+input[type="submit"]:hover, 
+input[type="reset"]:hover {
+    background-color: var(--bg-primary);
+    border-color: var(--text-secondary);
+    color: var(--text-secondary);
+}
+
+input[type="button"]:active, 
+input[type="submit"]:active, 
+input[type="reset"]:active {
+    background-color: var(--text-primary);
+    border-color: var(--text-primary);
+    color: var(--bg-primary);
+}
+
+button{
+    padding: 0.5rem 1rem;
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--bg-secondary);
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    min-width: 2.5rem;
+    margin: 1rem 1rem;
+}
+
+button:hover{
+    background-color: var(--bg-primary);
+    border-color: var(--text-secondary);
+    color: var(--text-secondary);
+}
+
+button:active{
+    background-color: var(--text-primary);
+    border-color: var(--text-primary);
+    color: var(--bg-primary);
+}
+
+textarea {
+    height: 2.5rem; /* Ajusta la altura según sea necesario */
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--bg-secondary);
+    border-radius: 0.25rem;
+    resize: vertical; /* Permite al usuario ajustar la altura */
+    min-width: 2rem;
+    margin: 0 1.5rem;
+    display: none;
+    resize: none;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--text-secondary);
+}
+
+.nav-link textarea {
+    display: none;
+}
+
+.navbar:hover .nav-link textarea,
+.subnavbar:hover .nav-link textarea {
+    display: block;
+}
+
+/* Estilo base para input number */
+input[type="number"] {
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--bg-secondary);
+    border-radius: 0.25rem;
+    outline: none;
+    transition: border-color 0.3s, background-color 0.3s;
+    min-width: 2rem;
+    margin: 0 1.5rem;
+    display: none;
+}
+
+/* Estilo cuando el input está enfocado */
+input[type="number"]:focus {
+    border-color: var(--text-secondary);
+    background-color: var(--bg-primary);
+    color: var(--text-secondary);
+}
+
+/* Estilo para los botones de incremento y decremento */
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Para mostrar el input solo al expandir el navbar */
+.nav-link input[type="number"] {
+    display: none;
+}
+
+.navbar:hover .nav-link input[type="number"],
+.subnavbar:hover .nav-link input[type="number"] {
+    display: block;
+}
+
+
+.navbar:hover .nav-link input[type="button"],
+.subnavbar:hover .nav-link input[type="button"],
+.navbar:hover .nav-link input[type="submit"],
+.subnavbar:hover .nav-link input[type="submit"],
+.navbar:hover .nav-link input[type="reset"],
+.subnavbar:hover .nav-link input[type="reset"] {
+    display: block;
+}
+
+
+.navbar:hover .nav-link input,
+.subnavbar:hover .nav-link input {
+    display: block;
+}
+
+.navbar:hover {
+    width: 16rem;
+}
+
+.navbar:hover .link-text {
+    display: block;
+}
+
+.logo {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3ch;
+    width: 100%;
+}
+
+.logo i {
+    transform: rotate(0deg);
+    transition: transform var(--transition-speed);
+}
+
+.navbar:hover .logo i {
+    transform: rotate(-180deg);
+}
+
+@media only screen and (min-width: 600px) {
+    .navbar {
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+    }
+
+    .navbar:hover {
+        width: 16rem;
+    }
+
+    .navbar:hover .link-text {
+        display: inline;
+        transition: opacity var(--transition-speed);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar {
+        bottom: 0;
+        width: 100vw;
+        height: 4rem;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+    }
+
+    .nav-link {
+        justify-content: center;
+    }
+
+    main {
+        margin: 0;
+    }
+}
+
+.subnavbar {
+    width: 5rem;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--bg-primary);
+    left: -200px;
+    overflow-x: hidden;
+    transition: width 200ms ease;
+}
+
+.subnavbar:hover {
+    width: 16rem;
+}
+
+.subnavbar:hover .link-text {
+    display: block;
+}
+
+input[type="file"] {
+    font-size: 1rem;
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--bg-secondary);
+    border-radius: 0.25rem;
+    outline: none;
+    transition: border-color 0.3s, background-color 0.3s;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin: 0 1.5rem;
+    display: none;
+}
+
+input[type="file"]:focus {
+    border-color: var(--text-secondary);
+    background-color: var(--bg-primary);
+    color: var(--text-secondary);
+}
+
+/* Para mostrar el input solo al expandir el navbar */
+.nav-link input[type="file"] {
+    display: none;
+}
+
+.navbar:hover .nav-link input[type="file"],
+.subnavbar:hover .nav-link input[type="file"] {
+    display: block;
+}
+
+/* Estilo base para el select */
+select {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--bg-secondary);
+    border-radius: 0.25rem;
+    outline: none;
+    transition: border-color 0.3s, background-color 0.3s;
+    margin: 0 1.5rem;
+    display: none;
+    cursor: pointer;
+}
+
+/* Estilo cuando el select está enfocado */
+select:focus {
+    border-color: var(--text-secondary);
+    background-color: var(--bg-primary);
+    color: var(--text-secondary);
+}
+
+/* Estilo para las opciones del select */
+select option {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Mostrar el select solo al expandir el navbar */
+.nav-link select {
+    display: none;
+}
+
+.navbar:hover .nav-link select,
+.subnavbar:hover .nav-link select {
+    display: block;
+}
+
+.navbar:hover .nav-link input[type="button"].edit-button,
+.subnavbar:hover .nav-link input[type="button"].edit-button {
+    display: none;
+}
+
+.navbar:hover .nav-link input[type="button"].delete-button,
+.subnavbar:hover .nav-link input[type="button"].delete-button {
+    display: none;
+}
+
+.navbar .nav-link input[type="button"].delete-button,
+.subnavbar .nav-link input[type="button"].delete-button {
+    display: none;
+}
